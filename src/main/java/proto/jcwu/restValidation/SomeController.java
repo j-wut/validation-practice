@@ -36,13 +36,13 @@ public class SomeController {
     }
 
     @RequestMapping("/all")
-    public ResponseEntity<SomeClass> allRequest(@RequestParam(value = "string") String s,
+    public SomeClass allRequest(@RequestParam(value = "string") String s,
                                                @RequestParam(value = "long") Long l,
                                                @RequestParam(value = "bool") Boolean b){
-        return new ResponseEntity<SomeClass>(new SomeClass(s,l,b), HttpStatus.OK);
+        return new SomeClass(s,l,b);
     }
 
-    @RequestMapping("/json")
+    @RequestMapping("/body")
     public SomeClass jsonRequest(@Valid @RequestBody SomeClass sc){
         return sc;
     }
