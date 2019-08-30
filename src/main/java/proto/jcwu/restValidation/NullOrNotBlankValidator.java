@@ -11,6 +11,6 @@ public class NullOrNotBlankValidator implements
 
     @Override
     public boolean isValid(String fieldValue, ConstraintValidatorContext constraintValidatorContext) {
-        return !(fieldValue!=null && fieldValue.isBlank());
+        return fieldValue == null || !fieldValue.isBlank();
     }
 }
