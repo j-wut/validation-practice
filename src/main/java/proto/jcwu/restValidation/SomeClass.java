@@ -1,5 +1,7 @@
 package proto.jcwu.restValidation;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,10 +12,14 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.NONE)
 public class SomeClass implements Serializable {
     @XmlElement
+    @NotBlank
+    @NotNull
     private String stringParameter;
     @XmlElement
+    @NotNull
     private Long longParameter;
     @XmlElement
+    @NotNull
     private Boolean boolParameter;
 
     public SomeClass(){

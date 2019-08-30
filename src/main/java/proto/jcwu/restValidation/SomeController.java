@@ -3,9 +3,12 @@ package proto.jcwu.restValidation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 @Validated
@@ -37,5 +40,10 @@ public class SomeController {
                                                @RequestParam(value = "long") Long l,
                                                @RequestParam(value = "bool") Boolean b){
         return new ResponseEntity<SomeClass>(new SomeClass(s,l,b), HttpStatus.OK);
+    }
+
+    @RequestMapping("/json")
+    public SomeClass jsonRequest(@Valid @RequestBody SomeClass sc){
+        return sc;
     }
 }
