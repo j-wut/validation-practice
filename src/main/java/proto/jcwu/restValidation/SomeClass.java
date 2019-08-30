@@ -12,8 +12,7 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.NONE)
 public class SomeClass implements Serializable {
     @XmlElement
-    @NotBlank
-    @NotNull
+    @NullOrNotBlankConstraint
     private String stringParameter;
     @XmlElement
     @NotNull
