@@ -5,6 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 
 public class NullOrNotBlankValidator implements
         ConstraintValidator<NullOrNotBlankConstraint,String> {
+
     @Override
     public void initialize(NullOrNotBlankConstraint constraintAnnotation) {
     }
